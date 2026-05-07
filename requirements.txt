@@ -4,6 +4,6 @@ python-multipart
 pdfplumber
 pytesseract
 Pillow
-google-generativeai
+groq
 python-dotenv
 pydantic
