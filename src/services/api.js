@@ -1,4 +1,6 @@
-const BASE_URL = 'http://localhost:8000';
+// Uses VITE_API_URL from .env for production (set in Vercel dashboard)
+// Falls back to localhost:8000 for local development
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 
 export async function extractFactSheet(file) {
   const formData = new FormData();
