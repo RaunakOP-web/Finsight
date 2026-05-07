@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Details - FinSight AI</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Build Your Profile</h1>
+        <form id="profileForm">
+            <!-- Step 1 -->
+            <div class="step active" id="step1">
+                <label>Name</label><input type="text" id="name" required>
+                <label>Age</label><input type="number" id="age" min="18" max="75" required>
+                <label>Occupation</label><input type="text" id="occupation" required>
+                <button type="button" class="btn next-btn" data-next="step2">Next</button>
+            </div>
+            <!-- Step 2 -->
+            <div class="step" id="step2">
+                <label>Monthly Income</label><input type="number" id="monthly_income" required>
+                <label>Current Savings</label><input type="number" id="current_savings" required>
+                <button type="button" class="btn prev-btn" data-prev="step1">Back</button>
+                <button type="button" class="btn next-btn" data-next="step3">Next</button>
+            </div>
+            <!-- Step 3 -->
+            <div class="step" id="step3">
+                <label>Goals (comma separated)</label><input type="text" id="goals" required>
+                <label>Time Horizon (Years)</label><input type="number" id="time_horizon_years" required>
+                <label>Target Corpus</label><input type="number" id="target_corpus" required>
+                <button type="button" class="btn prev-btn" data-prev="step2">Back</button>
+                <button type="button" class="btn next-btn" data-next="step4">Next</button>
+            </div>
+            <!-- Step 4 -->
+            <div class="step" id="step4">
+                <label>Risk Appetite</label>
+                <select id="risk_appetite" required>
+                    <option value="Conservative">Conservative</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Aggressive">Aggressive</option>
+                </select>
+                <label>Reaction to 20% Drop</label><input type="text" id="drop_reaction" required>
+                
+                <div id="upload-zone" class="upload-zone">
+                    <p>Drag & Drop Factsheet (PDF/Image) here or click to upload</p>
+                    <input type="file" id="factsheet" accept=".pdf,.png,.jpg,.jpeg" style="display:none;">
+                    <p id="file-error" class="error"></p>
+                </div>
+                
+                <button type="button" class="btn prev-btn" data-prev="step3">Back</button>
+                <button type="submit" class="btn">Generate Report</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/upload.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
